@@ -1,0 +1,1960 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0511.1508                               -->
+<workbook original-version='18.1' source-build='2023.1.2 (20231.23.0511.1508)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.Layers.true...Layers />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='AirBnbs and EV ports in NYC' inline='true' name='federated.0vm8tso1ahe7km1846wor1xcc5hz' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='listings (1)' name='textscan.0tnjmit149w9fc1488klk1uugjny'>
+            <connection class='textscan' directory='C:/Users/Blake Underwood/Desktop/portfolio/website2/html5up-massively/images' filename='listings (1).csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Alternative_Fuel_Stations_in_New_York' name='textscan.1xiawkk1tv07e414j5q4h0qyc9kt'>
+            <connection class='textscan' directory='C:/Users/Blake Underwood/Desktop/portfolio/website2/html5up-massively/images' filename='Alternative_Fuel_Stations_in_New_York.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='Intersects'>
+              <expression op='MAKEPOINT([listings (1).csv].[latitude], [listings (1).csv].[longitude])' />
+              <expression op='BUFFER(&#13;&#10;MAKEPOINT([Alternative_Fuel_Stations_in_New_York.csv].[Latitude], [Alternative_Fuel_Stations_in_New_York.csv].[Longitude]),&#13;&#10;150,&#13;&#10;&quot;m&quot;&#13;&#10;)' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0tnjmit149w9fc1488klk1uugjny' name='listings (1).csv' table='[listings (1)#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='id' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='integer' name='host_id' ordinal='2' />
+              <column datatype='string' name='host_name' ordinal='3' />
+              <column datatype='string' name='neighbourhood_group' ordinal='4' />
+              <column datatype='string' name='neighbourhood' ordinal='5' />
+              <column datatype='real' name='latitude' ordinal='6' />
+              <column datatype='real' name='longitude' ordinal='7' />
+              <column datatype='string' name='room_type' ordinal='8' />
+              <column datatype='integer' name='price' ordinal='9' />
+              <column datatype='integer' name='minimum_nights' ordinal='10' />
+              <column datatype='integer' name='number_of_reviews' ordinal='11' />
+              <column datatype='date' name='last_review' ordinal='12' />
+              <column datatype='real' name='reviews_per_month' ordinal='13' />
+              <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+              <column datatype='integer' name='availability_365' ordinal='15' />
+              <column datatype='integer' name='number_of_reviews_ltm' ordinal='16' />
+              <column datatype='string' name='license' ordinal='17' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1xiawkk1tv07e414j5q4h0qyc9kt' name='Alternative_Fuel_Stations_in_New_York.csv' table='[Alternative_Fuel_Stations_in_New_York#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Fuel Type Code' ordinal='0' />
+              <column datatype='string' name='Station Name' ordinal='1' />
+              <column datatype='string' name='Street Address' ordinal='2' />
+              <column datatype='string' name='Intersection Directions' ordinal='3' />
+              <column datatype='string' name='City' ordinal='4' />
+              <column datatype='string' name='State' ordinal='5' />
+              <column datatype='integer' name='ZIP' ordinal='6' />
+              <column datatype='string' name='Plus4' ordinal='7' />
+              <column datatype='string' name='Station Phone' ordinal='8' />
+              <column datatype='string' name='Status Code' ordinal='9' />
+              <column datatype='string' name='Expected Date' ordinal='10' />
+              <column datatype='string' name='Groups With Access Code' ordinal='11' />
+              <column datatype='string' name='Access Days Time' ordinal='12' />
+              <column datatype='string' name='Cards Accepted' ordinal='13' />
+              <column datatype='string' name='BD Blends' ordinal='14' />
+              <column datatype='string' name='NG Fill Type Code' ordinal='15' />
+              <column datatype='integer' name='NG PSI' ordinal='16' />
+              <column datatype='integer' name='EV Level1 EVSE Num' ordinal='17' />
+              <column datatype='integer' name='EV Level2 EVSE Num' ordinal='18' />
+              <column datatype='integer' name='EV DC Fast Count' ordinal='19' />
+              <column datatype='string' name='EV Other Info' ordinal='20' />
+              <column datatype='string' name='EV Network' ordinal='21' />
+              <column datatype='string' name='EV Network Web' ordinal='22' />
+              <column datatype='string' name='Geocode Status' ordinal='23' />
+              <column datatype='real' name='Latitude' ordinal='24' />
+              <column datatype='real' name='Longitude' ordinal='25' />
+              <column datatype='date' name='Date Last Confirmed' ordinal='26' />
+              <column datatype='integer' name='ID' ordinal='27' />
+              <column datatype='datetime' name='Updated At' ordinal='28' />
+              <column datatype='string' name='Owner Type Code' ordinal='29' />
+              <column datatype='real' name='Federal Agency ID' ordinal='30' />
+              <column datatype='string' name='Federal Agency Name' ordinal='31' />
+              <column datatype='date' name='Open Date' ordinal='32' />
+              <column datatype='string' name='Hydrogen Status Link' ordinal='33' />
+              <column datatype='string' name='NG Vehicle Class' ordinal='34' />
+              <column datatype='boolean' name='LPG Primary' ordinal='35' />
+              <column datatype='boolean' name='E85 Blender Pump' ordinal='36' />
+              <column datatype='string' name='EV Connector Types' ordinal='37' />
+              <column datatype='string' name='Country' ordinal='38' />
+              <column datatype='string' name='Intersection Directions (French)' ordinal='39' />
+              <column datatype='string' name='Access Days Time (French)' ordinal='40' />
+              <column datatype='string' name='BD Blends (French)' ordinal='41' />
+              <column datatype='string' name='Groups With Access Code (French)' ordinal='42' />
+              <column datatype='string' name='Hydrogen is Retail' ordinal='43' />
+              <column datatype='string' name='Access Code' ordinal='44' />
+              <column datatype='string' name='Access Detail Code' ordinal='45' />
+              <column datatype='string' name='Federal Agency Code' ordinal='46' />
+              <column datatype='string' name='Facility Type' ordinal='47' />
+              <column datatype='integer' name='CNG Dispenser Num' ordinal='48' />
+              <column datatype='string' name='CNG On-Site Renewable Source' ordinal='49' />
+              <column datatype='integer' name='CNG Total Compression Capacity' ordinal='50' />
+              <column datatype='integer' name='CNG Storage Capacity' ordinal='51' />
+              <column datatype='string' name='LNG On-Site Renewable Source' ordinal='52' />
+              <column datatype='string' name='E85 Other Ethanol Blends' ordinal='53' />
+              <column datatype='string' name='EV Pricing' ordinal='54' />
+              <column datatype='string' name='EV Pricing (French)' ordinal='55' />
+              <column datatype='string' name='LPG Nozzle Types' ordinal='56' />
+              <column datatype='string' name='Hydrogen Pressures' ordinal='57' />
+              <column datatype='string' name='Hydrogen Standards' ordinal='58' />
+              <column datatype='string' name='CNG Fill Type Code' ordinal='59' />
+              <column datatype='integer' name='CNG PSI' ordinal='60' />
+              <column datatype='string' name='CNG Vehicle Class' ordinal='61' />
+              <column datatype='string' name='LNG Vehicle Class' ordinal='62' />
+              <column datatype='string' name='EV On-Site Renewable Source' ordinal='63' />
+              <column datatype='string' name='Georeference' ordinal='64' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='Intersects'>
+              <expression op='MAKEPOINT([listings (1).csv].[latitude], [listings (1).csv].[longitude])' />
+              <expression op='BUFFER(&#13;&#10;MAKEPOINT([Alternative_Fuel_Stations_in_New_York.csv].[Latitude], [Alternative_Fuel_Stations_in_New_York.csv].[Longitude]),&#13;&#10;150,&#13;&#10;&quot;m&quot;&#13;&#10;)' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0tnjmit149w9fc1488klk1uugjny' name='listings (1).csv' table='[listings (1)#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='id' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='integer' name='host_id' ordinal='2' />
+              <column datatype='string' name='host_name' ordinal='3' />
+              <column datatype='string' name='neighbourhood_group' ordinal='4' />
+              <column datatype='string' name='neighbourhood' ordinal='5' />
+              <column datatype='real' name='latitude' ordinal='6' />
+              <column datatype='real' name='longitude' ordinal='7' />
+              <column datatype='string' name='room_type' ordinal='8' />
+              <column datatype='integer' name='price' ordinal='9' />
+              <column datatype='integer' name='minimum_nights' ordinal='10' />
+              <column datatype='integer' name='number_of_reviews' ordinal='11' />
+              <column datatype='date' name='last_review' ordinal='12' />
+              <column datatype='real' name='reviews_per_month' ordinal='13' />
+              <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+              <column datatype='integer' name='availability_365' ordinal='15' />
+              <column datatype='integer' name='number_of_reviews_ltm' ordinal='16' />
+              <column datatype='string' name='license' ordinal='17' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1xiawkk1tv07e414j5q4h0qyc9kt' name='Alternative_Fuel_Stations_in_New_York.csv' table='[Alternative_Fuel_Stations_in_New_York#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Fuel Type Code' ordinal='0' />
+              <column datatype='string' name='Station Name' ordinal='1' />
+              <column datatype='string' name='Street Address' ordinal='2' />
+              <column datatype='string' name='Intersection Directions' ordinal='3' />
+              <column datatype='string' name='City' ordinal='4' />
+              <column datatype='string' name='State' ordinal='5' />
+              <column datatype='integer' name='ZIP' ordinal='6' />
+              <column datatype='string' name='Plus4' ordinal='7' />
+              <column datatype='string' name='Station Phone' ordinal='8' />
+              <column datatype='string' name='Status Code' ordinal='9' />
+              <column datatype='string' name='Expected Date' ordinal='10' />
+              <column datatype='string' name='Groups With Access Code' ordinal='11' />
+              <column datatype='string' name='Access Days Time' ordinal='12' />
+              <column datatype='string' name='Cards Accepted' ordinal='13' />
+              <column datatype='string' name='BD Blends' ordinal='14' />
+              <column datatype='string' name='NG Fill Type Code' ordinal='15' />
+              <column datatype='integer' name='NG PSI' ordinal='16' />
+              <column datatype='integer' name='EV Level1 EVSE Num' ordinal='17' />
+              <column datatype='integer' name='EV Level2 EVSE Num' ordinal='18' />
+              <column datatype='integer' name='EV DC Fast Count' ordinal='19' />
+              <column datatype='string' name='EV Other Info' ordinal='20' />
+              <column datatype='string' name='EV Network' ordinal='21' />
+              <column datatype='string' name='EV Network Web' ordinal='22' />
+              <column datatype='string' name='Geocode Status' ordinal='23' />
+              <column datatype='real' name='Latitude' ordinal='24' />
+              <column datatype='real' name='Longitude' ordinal='25' />
+              <column datatype='date' name='Date Last Confirmed' ordinal='26' />
+              <column datatype='integer' name='ID' ordinal='27' />
+              <column datatype='datetime' name='Updated At' ordinal='28' />
+              <column datatype='string' name='Owner Type Code' ordinal='29' />
+              <column datatype='real' name='Federal Agency ID' ordinal='30' />
+              <column datatype='string' name='Federal Agency Name' ordinal='31' />
+              <column datatype='date' name='Open Date' ordinal='32' />
+              <column datatype='string' name='Hydrogen Status Link' ordinal='33' />
+              <column datatype='string' name='NG Vehicle Class' ordinal='34' />
+              <column datatype='boolean' name='LPG Primary' ordinal='35' />
+              <column datatype='boolean' name='E85 Blender Pump' ordinal='36' />
+              <column datatype='string' name='EV Connector Types' ordinal='37' />
+              <column datatype='string' name='Country' ordinal='38' />
+              <column datatype='string' name='Intersection Directions (French)' ordinal='39' />
+              <column datatype='string' name='Access Days Time (French)' ordinal='40' />
+              <column datatype='string' name='BD Blends (French)' ordinal='41' />
+              <column datatype='string' name='Groups With Access Code (French)' ordinal='42' />
+              <column datatype='string' name='Hydrogen is Retail' ordinal='43' />
+              <column datatype='string' name='Access Code' ordinal='44' />
+              <column datatype='string' name='Access Detail Code' ordinal='45' />
+              <column datatype='string' name='Federal Agency Code' ordinal='46' />
+              <column datatype='string' name='Facility Type' ordinal='47' />
+              <column datatype='integer' name='CNG Dispenser Num' ordinal='48' />
+              <column datatype='string' name='CNG On-Site Renewable Source' ordinal='49' />
+              <column datatype='integer' name='CNG Total Compression Capacity' ordinal='50' />
+              <column datatype='integer' name='CNG Storage Capacity' ordinal='51' />
+              <column datatype='string' name='LNG On-Site Renewable Source' ordinal='52' />
+              <column datatype='string' name='E85 Other Ethanol Blends' ordinal='53' />
+              <column datatype='string' name='EV Pricing' ordinal='54' />
+              <column datatype='string' name='EV Pricing (French)' ordinal='55' />
+              <column datatype='string' name='LPG Nozzle Types' ordinal='56' />
+              <column datatype='string' name='Hydrogen Pressures' ordinal='57' />
+              <column datatype='string' name='Hydrogen Standards' ordinal='58' />
+              <column datatype='string' name='CNG Fill Type Code' ordinal='59' />
+              <column datatype='integer' name='CNG PSI' ordinal='60' />
+              <column datatype='string' name='CNG Vehicle Class' ordinal='61' />
+              <column datatype='string' name='LNG Vehicle Class' ordinal='62' />
+              <column datatype='string' name='EV On-Site Renewable Source' ordinal='63' />
+              <column datatype='string' name='Georeference' ordinal='64' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>host_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[host_id]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>host_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>host_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[host_name]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>host_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood_group]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>neighbourhood_group</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>neighbourhood</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[room_type]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>room_type</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>minimum_nights</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[minimum_nights]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>minimum_nights</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_reviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_reviews]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>number_of_reviews</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_review</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[last_review]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>last_review</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews_per_month</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[reviews_per_month]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>reviews_per_month</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calculated_host_listings_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[calculated_host_listings_count]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>calculated_host_listings_count</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>availability_365</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[availability_365]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>availability_365</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_reviews_ltm</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_reviews_ltm]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>number_of_reviews_ltm</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>license</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[license]</local-name>
+            <parent-name>[listings (1).csv]</parent-name>
+            <remote-alias>license</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fuel Type Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Fuel Type Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Fuel Type Code</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Station Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Station Name]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Station Name</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Street Address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Street Address]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Street Address</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Intersection Directions</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Intersection Directions]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Intersection Directions</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ZIP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ZIP]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>ZIP</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Plus4</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Plus4]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Plus4</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Station Phone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Station Phone]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Station Phone</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Status Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Status Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Status Code</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Expected Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Expected Date]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Expected Date</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Groups With Access Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Groups With Access Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Groups With Access Code</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Access Days Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Access Days Time]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Access Days Time</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cards Accepted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cards Accepted]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Cards Accepted</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BD Blends</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BD Blends]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>BD Blends</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NG Fill Type Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NG Fill Type Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>NG Fill Type Code</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NG PSI</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NG PSI]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>NG PSI</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Level1 EVSE Num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EV Level1 EVSE Num]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Level1 EVSE Num</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Level2 EVSE Num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EV Level2 EVSE Num]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Level2 EVSE Num</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV DC Fast Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EV DC Fast Count]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV DC Fast Count</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Other Info</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Other Info]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Other Info</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Network</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Network]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Network</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Network Web</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Network Web]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Network Web</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geocode Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Geocode Status]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Geocode Status</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date Last Confirmed</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date Last Confirmed]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Date Last Confirmed</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Updated At</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Updated At]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Updated At</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Owner Type Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Owner Type Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Owner Type Code</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Federal Agency ID</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Federal Agency ID]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Federal Agency ID</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Federal Agency Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Federal Agency Name]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Federal Agency Name</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Open Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Open Date]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Open Date</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hydrogen Status Link</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Hydrogen Status Link]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Hydrogen Status Link</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NG Vehicle Class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NG Vehicle Class]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>NG Vehicle Class</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LPG Primary</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[LPG Primary]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>LPG Primary</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>E85 Blender Pump</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[E85 Blender Pump]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>E85 Blender Pump</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Connector Types</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Connector Types]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Connector Types</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Intersection Directions (French)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Intersection Directions (French)]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Intersection Directions (French)</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Access Days Time (French)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Access Days Time (French)]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Access Days Time (French)</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BD Blends (French)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BD Blends (French)]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>BD Blends (French)</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Groups With Access Code (French)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Groups With Access Code (French)]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Groups With Access Code (French)</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hydrogen is Retail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Hydrogen is Retail]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Hydrogen is Retail</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Access Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Access Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Access Code</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Access Detail Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Access Detail Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Access Detail Code</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Federal Agency Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Federal Agency Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Federal Agency Code</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Facility Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Facility Type]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Facility Type</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG Dispenser Num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CNG Dispenser Num]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG Dispenser Num</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG On-Site Renewable Source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CNG On-Site Renewable Source]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG On-Site Renewable Source</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG Total Compression Capacity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CNG Total Compression Capacity]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG Total Compression Capacity</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG Storage Capacity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CNG Storage Capacity]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG Storage Capacity</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LNG On-Site Renewable Source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LNG On-Site Renewable Source]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>LNG On-Site Renewable Source</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>E85 Other Ethanol Blends</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[E85 Other Ethanol Blends]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>E85 Other Ethanol Blends</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Pricing</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Pricing]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Pricing</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV Pricing (French)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV Pricing (French)]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV Pricing (French)</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LPG Nozzle Types</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LPG Nozzle Types]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>LPG Nozzle Types</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hydrogen Pressures</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Hydrogen Pressures]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Hydrogen Pressures</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hydrogen Standards</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Hydrogen Standards]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Hydrogen Standards</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG Fill Type Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CNG Fill Type Code]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG Fill Type Code</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG PSI</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CNG PSI]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG PSI</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CNG Vehicle Class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CNG Vehicle Class]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>CNG Vehicle Class</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LNG Vehicle Class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LNG Vehicle Class]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>LNG Vehicle Class</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EV On-Site Renewable Source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EV On-Site Renewable Source]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>EV On-Site Renewable Source</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Georeference</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Georeference]</local-name>
+            <parent-name>[Alternative_Fuel_Stations_in_New_York.csv]</parent-name>
+            <remote-alias>Georeference</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Cng Psi' datatype='integer' name='[CNG PSI]' role='measure' type='quantitative' />
+      <column caption='EV points' datatype='spatial' name='[Calculation_298082059632742402]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='MAKEPOINT([Latitude],[Longitude])' />
+      </column>
+      <column caption='EV Points' datatype='spatial' name='[Calculation_464152296257900544]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='MAKEPOINT([Latitude],[Longitude])' />
+      </column>
+      <column caption='AirBnb EV distance' datatype='real' name='[Calculation_464152296262201346]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DISTANCE([Calculation_464152296257900544],[Calculation_579275561072160769], &quot;m&quot;)' />
+      </column>
+      <column caption='EV Buffer' datatype='spatial' name='[Calculation_464152296262672387]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='BUFFER(&#13;&#10;MAKEPOINT([Latitude],[Longitude]),&#13;&#10;150,&#13;&#10;&quot;m&quot;&#13;&#10;)' />
+      </column>
+      <column caption='AirBnb Points' datatype='spatial' name='[Calculation_579275561072160769]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='MAKEPOINT([latitude],[longitude])' />
+      </column>
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Latitude1' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Longitude1' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Ng Psi' datatype='integer' name='[NG PSI]' role='measure' type='quantitative' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[ZIP]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='listings (1).csv' datatype='table' name='[__tableau_internal_object_id__].[listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC]' role='measure' type='quantitative' />
+      <column caption='Availability 365' datatype='integer' name='[availability_365]' role='measure' type='quantitative' />
+      <column caption='Calculated Host Listings Count' datatype='integer' name='[calculated_host_listings_count]' role='measure' type='quantitative' />
+      <column caption='Host Id' datatype='integer' name='[host_id]' role='dimension' type='ordinal' />
+      <column caption='Host Name' datatype='string' name='[host_name]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Last Review' datatype='date' name='[last_review]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='License' datatype='string' name='[license]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Minimum Nights' datatype='integer' name='[minimum_nights]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood' datatype='string' name='[neighbourhood]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood Group' datatype='string' name='[neighbourhood_group]' role='dimension' type='nominal' />
+      <column caption='Number Of Reviews' datatype='integer' name='[number_of_reviews]' role='measure' type='quantitative' />
+      <column caption='Number Of Reviews Ltm' datatype='integer' name='[number_of_reviews_ltm]' role='measure' type='quantitative' />
+      <column caption='Price' datatype='integer' name='[price]' role='measure' type='quantitative' />
+      <column caption='Reviews Per Month' datatype='real' name='[reviews_per_month]' role='dimension' type='quantitative' />
+      <column caption='Room Type' datatype='string' name='[room_type]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='listings (1).csv' id='listings (1).csv_D21FE0C6B45D40E8BBE4FEDCCBF844EC'>
+            <properties context=''>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='Intersects'>
+                    <expression op='MAKEPOINT([listings (1).csv].[latitude], [listings (1).csv].[longitude])' />
+                    <expression op='BUFFER(&#13;&#10;MAKEPOINT([Alternative_Fuel_Stations_in_New_York.csv].[Latitude], [Alternative_Fuel_Stations_in_New_York.csv].[Longitude]),&#13;&#10;150,&#13;&#10;&quot;m&quot;&#13;&#10;)' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.0tnjmit149w9fc1488klk1uugjny' name='listings (1).csv' table='[listings (1)#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='integer' name='id' ordinal='0' />
+                    <column datatype='string' name='name' ordinal='1' />
+                    <column datatype='integer' name='host_id' ordinal='2' />
+                    <column datatype='string' name='host_name' ordinal='3' />
+                    <column datatype='string' name='neighbourhood_group' ordinal='4' />
+                    <column datatype='string' name='neighbourhood' ordinal='5' />
+                    <column datatype='real' name='latitude' ordinal='6' />
+                    <column datatype='real' name='longitude' ordinal='7' />
+                    <column datatype='string' name='room_type' ordinal='8' />
+                    <column datatype='integer' name='price' ordinal='9' />
+                    <column datatype='integer' name='minimum_nights' ordinal='10' />
+                    <column datatype='integer' name='number_of_reviews' ordinal='11' />
+                    <column datatype='date' name='last_review' ordinal='12' />
+                    <column datatype='real' name='reviews_per_month' ordinal='13' />
+                    <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+                    <column datatype='integer' name='availability_365' ordinal='15' />
+                    <column datatype='integer' name='number_of_reviews_ltm' ordinal='16' />
+                    <column datatype='string' name='license' ordinal='17' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.1xiawkk1tv07e414j5q4h0qyc9kt' name='Alternative_Fuel_Stations_in_New_York.csv' table='[Alternative_Fuel_Stations_in_New_York#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='Fuel Type Code' ordinal='0' />
+                    <column datatype='string' name='Station Name' ordinal='1' />
+                    <column datatype='string' name='Street Address' ordinal='2' />
+                    <column datatype='string' name='Intersection Directions' ordinal='3' />
+                    <column datatype='string' name='City' ordinal='4' />
+                    <column datatype='string' name='State' ordinal='5' />
+                    <column datatype='integer' name='ZIP' ordinal='6' />
+                    <column datatype='string' name='Plus4' ordinal='7' />
+                    <column datatype='string' name='Station Phone' ordinal='8' />
+                    <column datatype='string' name='Status Code' ordinal='9' />
+                    <column datatype='string' name='Expected Date' ordinal='10' />
+                    <column datatype='string' name='Groups With Access Code' ordinal='11' />
+                    <column datatype='string' name='Access Days Time' ordinal='12' />
+                    <column datatype='string' name='Cards Accepted' ordinal='13' />
+                    <column datatype='string' name='BD Blends' ordinal='14' />
+                    <column datatype='string' name='NG Fill Type Code' ordinal='15' />
+                    <column datatype='integer' name='NG PSI' ordinal='16' />
+                    <column datatype='integer' name='EV Level1 EVSE Num' ordinal='17' />
+                    <column datatype='integer' name='EV Level2 EVSE Num' ordinal='18' />
+                    <column datatype='integer' name='EV DC Fast Count' ordinal='19' />
+                    <column datatype='string' name='EV Other Info' ordinal='20' />
+                    <column datatype='string' name='EV Network' ordinal='21' />
+                    <column datatype='string' name='EV Network Web' ordinal='22' />
+                    <column datatype='string' name='Geocode Status' ordinal='23' />
+                    <column datatype='real' name='Latitude' ordinal='24' />
+                    <column datatype='real' name='Longitude' ordinal='25' />
+                    <column datatype='date' name='Date Last Confirmed' ordinal='26' />
+                    <column datatype='integer' name='ID' ordinal='27' />
+                    <column datatype='datetime' name='Updated At' ordinal='28' />
+                    <column datatype='string' name='Owner Type Code' ordinal='29' />
+                    <column datatype='real' name='Federal Agency ID' ordinal='30' />
+                    <column datatype='string' name='Federal Agency Name' ordinal='31' />
+                    <column datatype='date' name='Open Date' ordinal='32' />
+                    <column datatype='string' name='Hydrogen Status Link' ordinal='33' />
+                    <column datatype='string' name='NG Vehicle Class' ordinal='34' />
+                    <column datatype='boolean' name='LPG Primary' ordinal='35' />
+                    <column datatype='boolean' name='E85 Blender Pump' ordinal='36' />
+                    <column datatype='string' name='EV Connector Types' ordinal='37' />
+                    <column datatype='string' name='Country' ordinal='38' />
+                    <column datatype='string' name='Intersection Directions (French)' ordinal='39' />
+                    <column datatype='string' name='Access Days Time (French)' ordinal='40' />
+                    <column datatype='string' name='BD Blends (French)' ordinal='41' />
+                    <column datatype='string' name='Groups With Access Code (French)' ordinal='42' />
+                    <column datatype='string' name='Hydrogen is Retail' ordinal='43' />
+                    <column datatype='string' name='Access Code' ordinal='44' />
+                    <column datatype='string' name='Access Detail Code' ordinal='45' />
+                    <column datatype='string' name='Federal Agency Code' ordinal='46' />
+                    <column datatype='string' name='Facility Type' ordinal='47' />
+                    <column datatype='integer' name='CNG Dispenser Num' ordinal='48' />
+                    <column datatype='string' name='CNG On-Site Renewable Source' ordinal='49' />
+                    <column datatype='integer' name='CNG Total Compression Capacity' ordinal='50' />
+                    <column datatype='integer' name='CNG Storage Capacity' ordinal='51' />
+                    <column datatype='string' name='LNG On-Site Renewable Source' ordinal='52' />
+                    <column datatype='string' name='E85 Other Ethanol Blends' ordinal='53' />
+                    <column datatype='string' name='EV Pricing' ordinal='54' />
+                    <column datatype='string' name='EV Pricing (French)' ordinal='55' />
+                    <column datatype='string' name='LPG Nozzle Types' ordinal='56' />
+                    <column datatype='string' name='Hydrogen Pressures' ordinal='57' />
+                    <column datatype='string' name='Hydrogen Standards' ordinal='58' />
+                    <column datatype='string' name='CNG Fill Type Code' ordinal='59' />
+                    <column datatype='integer' name='CNG PSI' ordinal='60' />
+                    <column datatype='string' name='CNG Vehicle Class' ordinal='61' />
+                    <column datatype='string' name='LNG Vehicle Class' ordinal='62' />
+                    <column datatype='string' name='EV On-Site Renewable Source' ordinal='63' />
+                    <column datatype='string' name='Georeference' ordinal='64' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AirBnbs and EV ports in NYC' name='federated.0vm8tso1ahe7km1846wor1xcc5hz' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0vm8tso1ahe7km1846wor1xcc5hz'>
+            <column caption='EV points' datatype='spatial' name='[Calculation_298082059632742402]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='MAKEPOINT([Latitude],[Longitude])' />
+            </column>
+            <column caption='EV Points' datatype='spatial' name='[Calculation_464152296257900544]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='MAKEPOINT([Latitude],[Longitude])' />
+            </column>
+            <column caption='AirBnb EV distance' datatype='real' name='[Calculation_464152296262201346]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DISTANCE([Calculation_464152296257900544],[Calculation_579275561072160769], &quot;m&quot;)' />
+            </column>
+            <column caption='EV Buffer' datatype='spatial' name='[Calculation_464152296262672387]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='BUFFER(&#13;&#10;MAKEPOINT([Latitude],[Longitude]),&#13;&#10;150,&#13;&#10;&quot;m&quot;&#13;&#10;)' />
+            </column>
+            <column caption='AirBnb Points' datatype='spatial' name='[Calculation_579275561072160769]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='MAKEPOINT([latitude],[longitude])' />
+            </column>
+            <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Latitude1' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude1' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[Calculation_298082059632742402]' derivation='Collect' name='[clct:Calculation_298082059632742402:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_464152296262672387]' derivation='Collect' name='[clct:Calculation_464152296262672387:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_579275561072160769]' derivation='Collect' name='[clct:Calculation_579275561072160769:nk]' pivot='key' type='nominal' />
+            <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[Calculation_464152296262201346]' derivation='Min' name='[min:Calculation_464152296262201346:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ID]' derivation='None' name='[none:ID:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[id]' derivation='None' name='[none:id:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:ID:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:ID:ok]' member='115124' />
+              <groupfilter function='member' level='[none:ID:ok]' member='115172' />
+              <groupfilter function='member' level='[none:ID:ok]' member='124144' />
+              <groupfilter function='member' level='[none:ID:ok]' member='169201' />
+              <groupfilter function='member' level='[none:ID:ok]' member='250852' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:ID:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[Longitude (generated)]' field-type='quantitative' max='-8234446.3431988368' min='-8237775.7386665102' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[Latitude (generated)]' field-type='quantitative' max='4973295.3106389763' min='4971592.4068128774' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes _.fcp.Layers.true...customization-axis='layer'>
+          <_.fcp.Layers.true...pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </_.fcp.Layers.true...pane>
+          <pane _.fcp.Layers.true...generated-title='EV Buffer' id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[clct:Calculation_464152296262672387:nk]' />
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:ID:ok]' />
+              <geometry column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[clct:Calculation_464152296262672387:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f1ce63' />
+                <format attr='mark-transparency' value='47' />
+              </style-rule>
+            </style>
+          </pane>
+          <_.fcp.Layers.true...pane generated-title='AirBnb Points' id='0' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[clct:Calculation_579275561072160769:nk]' />
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:id:ok]' />
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[min:Calculation_464152296262201346:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.62569057941436768' />
+                <format attr='shape' value=':filled/square' />
+                <format attr='mark-color' value='#0018ed' />
+              </style-rule>
+            </style>
+          </_.fcp.Layers.true...pane>
+          <_.fcp.Layers.true...pane generated-title='EV points' id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[clct:Calculation_298082059632742402:nk]' />
+              <lod column='[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:ID:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+                <format attr='shape' value=':filled/square' />
+              </style-rule>
+            </style>
+          </_.fcp.Layers.true...pane>
+        </panes>
+        <rows>[federated.0vm8tso1ahe7km1846wor1xcc5hz].[Latitude (generated)]</rows>
+        <cols>[federated.0vm8tso1ahe7km1846wor1xcc5hz].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{74D3A229-E045-4011-AFB3-AB1656DBD737}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.029w72c1nh3w3k1582f5318l67vu].[none:ID:ok]</field>
+            <field>[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:ID:ok]</field>
+            <field>[federated.0vm8tso1ahe7km1846wor1xcc5hz].[none:id:ok]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='4' />
+        <default-map-unit-selection mapunit='1' />
+      </viewpoint>
+      <simple-id uuid='{6CA67346-AE45-4288-9E6A-D47845A03644}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      M7T/P1pFlwIt0xkRAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="assets/img/favicon.ico">
+		<title>Data Analysis project</title>
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Link Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	
+		<!-- Link Font Awesome CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+		<!-- Link Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	
+		<!-- Link your custom CSS files -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/mediumish.css" rel="stylesheet">
+
+		<!-- Add the style element for your custom styles -->
+		<style>
+			/* Your custom CSS styles go here */
+			.text-center.text-md-left a,
+			.text-center.text-md-left .btn {
+				margin-top: -10px; /* Adjust the margin as needed */
+			}
+			
+			.text-center.text-md-left span {
+				margin-top: 1px; /* Adjust the margin as needed */
+			}
+		</style>
+
+		<style>
+			/* Custom CSS for the "Accounts" heading in this specific file */
+			#footer .split.contact section:nth-child(2) h3 {
+				margin-top: 50px; /* Adjust this value to your desired top margin */
+			}
+
+			/* Custom CSS for the icons in this specific file */
+			#footer .split.contact section:nth-child(2) ul.icons {
+				margin-top: 50px; /* Adjust this value to your desired top margin */
+			}
+			.thin-line {
+                width: 50%;
+                height: 1px;
+                background-color: #000; /* You can change the color */
+                margin: 0 auto; /* This centers the line horizontally */
+            }
+		</style>
+	</head>
+<body>
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="index.html">
+		<!-- Increase the size of the logo by adding custom CSS styling -->
+		<img src="images/logo.png" alt="logo" style="width: 35px; height: 100px;">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="tableau.html">Tableau</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="R.html">R</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="python.html">python</a>
+				</li>
+			<li class="nav-item">
+					<a class="nav-link" href="sql.html">SQL</a>
+			</li>
+		</ul>
+		<!-- End Menu -->
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+		<!-- Begin Post -->
+		<div class="col-md-8 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+				<!-- Begin Post -->
+				<div class="col-md-8 col-md-offset-2 col-xs-12">
+					<div class="mainheading">
+						<!-- Begin Top Meta -->
+						<div class="row post-top-meta">
+							<div class="col-md-2 text-md-right">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+							</div>
+							<div class="col-md-10">
+								<div class="text-center text-md-left">
+									<br>
+									<a class="link-dark" href="author.html">Blake</a>
+									<a href="https://www.linkedin.com/in/blake-underwood-b1867a252/" class="btn follow">connect</a>
+									<br>
+									<span class="post-date">26 July 2023</span>
+									<span class="dot"></span><span class="post-read">3 min read</span>
+								</div>
+							</div>
+						</div>
+				<!-- End Top Meta -->
+				<h1 class="posttitle">Inorder traversal</h1>
+				<h6>(with python)</h6>
+			</div>
+		</div>		
+			<!-- Begin Featured Image -->
+			<img class="featured-image img-fluid" src="images/inorder_traversal.jpg" alt="">
+			<!-- End Featured Image -->
+
+			<!-- Begin Post Content -->
+			<div class="article-post">
+				
+                <p>In the following demonstration, I will guide you through an inorder traversal of a binary tree using the tree structure depicted in the image above.</p>
+
+                <video width="600" controls>
+					<source src="images/inoder_trav_demo.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+                <p>When tackling traversal problems like this, I find it helpful to work with three variables: one for the <strong>result</strong>, one to hold the current <strong>stack</strong>, and one for the <strong>current</strong> node being traversed.</p>
+
+                <p>In this specific problem, a stack is essential because in many cases, you'll need to traverse deeper down the node before you can pop it to the result. Therefore, a stack provides temporary storage for this process.</p>
+
+                <p>Now that we have our three variables, we can traverse the tree. Our first loop will continue until there is no current node or stack, which indicates that the tree has been fully traversed. Within the loop, since it's an inorder traversal, we'll always append the current node to the stack and then move to the left, continuing until we reach the end. At that point, we append the leftmost node to the result, move to the right node (if available), and restart the process.</p>
+
+                <p>Below is an image of the Python code I made for inorder traversal in python:</p>
+
+                <img src="images/inorder_traversal_code.PNG" alt="" width="600">
+
+                <br><br><br><br>
+				<div class="thin-line"></div>
+                <p>If you're interested in seeing more problems I've solved, similar to this one, you can check out my LeetCode profile: <a href="https://leetcode.com/ublake7/">leetcode.com/ublake7/</a></p>
+
+
+			</div>
+			<!-- End Post Content -->
+		</div>
+		<!-- End Post -->
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+<div class="hideshare"></div>
+<!-- Begin Related
+================================================== -->
+<div class="graybg">
+	<div class="container">
+		<div class="row listrecent listrelated">
+			<!-- begin post -->
+            <!-- 
+			<div class="col-md-4">
+				<div class="card">
+					<a href="tables_tableau.html">
+					<img class="img-fluid img-thumb" src="images/table.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="tables_tableau.html">Tables in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="tables_tableau.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        -->
+			<!-- end post -->
+
+			<!-- begin post -->
+			<!-- 
+			<div class="col-md-4">
+				<div class="card">
+					<a href="tableau_project_2.html">
+					<img class="img-fluid img-thumb" src="images/table.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="tableau_project_2.html">Tables in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="tableau_project_2.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+			<!-- end post -->
+
+			<!-- begin post -->
+			<!-- 
+			<div class="col-md-4">
+				<div class="card">
+					<a href="tableau_project_2.html">
+					<img class="img-fluid img-thumb" src="images/table.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="tableau_project_2.html">Tables in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="tableau_project_2.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+			<!-- end post -->
+
+		</div>
+	</div>
+</div>
+<!-- End Related Posts
+================================================== -->
+
+<!-- Footer -->
+<footer id="footer">
+	<section class="split contact">
+		<section>
+			<h3>Email</h3>
+			<p><a href="mailto:ublake7@gmail.com">ublake7@gmail.com</a></p>
+		</section>
+		<section> 
+			<h3 class="accounts-heading">Accounts</h3> <!-- Add a class to the h3 element -->
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/blake-underwood-b1867a252/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+				<li><a href="https://github.com/blakeunderwood" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</section>
+	</section>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- JavaScript files -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/mediumish.js"></script>
+</body>
+</html>

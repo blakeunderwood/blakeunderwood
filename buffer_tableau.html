@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="assets/img/favicon.ico">
+		<title>Data Analysis project</title>
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Link Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	
+		<!-- Link Font Awesome CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+		<!-- Link Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	
+		<!-- Link your custom CSS files -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/mediumish.css" rel="stylesheet">
+
+		<!-- Add the style element for your custom styles -->
+		<style>
+			/* Your custom CSS styles go here */
+			.text-center.text-md-left a,
+			.text-center.text-md-left .btn {
+				margin-top: -10px; /* Adjust the margin as needed */
+			}
+			
+			.text-center.text-md-left span {
+				margin-top: 15px; /* Adjust the margin as needed */
+			}
+		</style>
+
+		<style>
+			/* Custom CSS for the "Accounts" heading in this specific file */
+			#footer .split.contact section:nth-child(2) h3 {
+				margin-top: 50px; /* Adjust this value to your desired top margin */
+			}
+
+			/* Custom CSS for the icons in this specific file */
+			#footer .split.contact section:nth-child(2) ul.icons {
+				margin-top: 50px; /* Adjust this value to your desired top margin */
+			}
+            .small-link {
+			font-size: 20px; /* Adjust the size as needed */
+		}
+		</style>
+	</head>
+<body>
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="index.html">
+		<!-- Increase the size of the logo by adding custom CSS styling -->
+		<img src="images/logo.png" alt="logo" style="width: 35px; height: 100px;">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="tableau.html">Tableau</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="R.html">R</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="python.html">python</a>
+				</li>
+			<li class="nav-item">
+					<a class="nav-link" href="sql.html">SQL</a>
+			</li>
+		</ul>
+		<!-- End Menu -->
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
+<!-- Begin Article
+================================================== -->
+<div class="container">
+	<div class="row">
+		<!-- Begin Post -->
+		<div class="col-md-8 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+				<!-- Begin Post -->
+				<div class="col-md-8 col-md-offset-2 col-xs-12">
+					<div class="mainheading">
+						<!-- Begin Top Meta -->
+						<div class="row post-top-meta">
+							<div class="col-md-2 text-md-right">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+							</div>
+							<div class="col-md-10">
+								<div class="text-center text-md-left">
+									<br>
+									<a class="link-dark" href="author.html">Blake</a>
+									<a href="https://www.linkedin.com/in/blake-underwood-b1867a252/" class="btn follow">connect</a>
+									<br>
+									<span class="post-date">26 July 2023</span>
+									<span class="dot"></span><span class="post-read">10 min read</span>
+								</div>
+							</div>
+						</div>
+				<!-- End Top Meta -->
+				<h1 class="posttitle">Buffers in Tableau</h1>
+				<h6>(with New York datasets)</h6>
+			</div>
+		</div>		
+			<!-- Begin Featured Image -->
+			<img class="featured-image img-fluid" src="images/new_york.jpg" alt="">
+			<!-- End Featured Image -->
+
+			<!-- Begin Post Content -->
+			<div class="article-post">
+
+                <p style="text-align: center;"><strong>Research question</strong></p>
+
+				
+                <blockquote>
+                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;<em>Are EV ports close to AirBnb's in NYC?</em></p>
+                </blockquote>
+                
+                
+                <br>
+                <p> To answer our research question, we will utilize two datasets: one detailing the locations of all the AirBnb's in NYC and another indicating the locations of all the EV ports in NYC.</p>
+
+
+				<br>
+
+                <img width="700" src="images/airbnb.PNG" alt="excel">
+                <a href="images/listing(1).csv" target="_blank" class="small-link">Download New York AirBnb dataset</a>
+
+                <br><br>
+                <img width="700" src="images/EV_ports.PNG" alt="excel">
+                <a href="images/Alternative_Fuel_Stations_in_New_York.csv" target="_blank" class="small-link">Download New York EV ports dataset</a>
+
+                <br><br>
+				<p style="text-align: center;"><strong>AirBnb points</strong></p>
+
+                <p> First, let's create visual points for all the AirBnb's in NYC. We can achieve this using the <strong>makepoint function</strong> in Tableau to transform the latitude and longitude variables into visual points.</p>
+
+                <video width="1000" controls>
+					<source src="images/AirBnb.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+				<p style="text-align: center;"><strong>EV points</strong></p>
+				
+                <p> We can add the EV data to our view and follow the same process to obtain all the EV charging points. Once we have the EV points, we can incorporate them into our view as a new layer and modify their shape and color to ensure clear visibility.</p>
+
+                <video width="1000" controls>
+					<source src="images/EV_ports.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+
+				<p style="text-align: center;"><strong>Joining two datasets </strong></p>
+				
+                <p> We can observe the locations of our AirBnb's and EV ports on the map. However, to determine the distance between them, we need to merge the two datasets. Below, you can see how I employed an inner join to achieve this.</p>
+
+                <video width="1000" controls>
+					<source src="images/join.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+				<p style="text-align: center;"><strong>Distance function </strong></p>
+				
+                <p>Now, we will need to utilize the <strong>Distance function</strong> to create a variable that calculates the distance between an AirBnb and EV ports.</p>
+
+                <video width="1000" controls>
+					<source src="images/buffer1.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+				<p style="text-align: center;"><strong>Buffer function </strong></p>
+				
+				<p> We will employ the <strong>buffer function</strong> to create a buffer circle around the EV ports, displaying the distance of the buffer circle as the radius.</p>
+
+                <video width="1000" controls>
+					<source src="images/buffer2.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+				<p style="text-align: center;"><strong>finishing touches</strong></p>
+				
+                <p>Lastly, we can adjust the color and transparency of our buffer circle to indicate a radius of 150 meters. Additionally, we can modify the distance value from SUM, which currently encompasses all EV ports in its buffer circle, to calculate the distance only to the nearest EV port.</p>
+
+                <video width="1000" controls>
+					<source src="images/buffer3.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<br><br><br>
+
+				<p style="text-align: center;"><strong>Conclusion</strong></p>
+				<p>It's evident that, for the most part, there is an EV port within at least 150 meters of every AirBnb in downtown Manhattan. To extend our analysis to cover the entirety of NYC, we can create additional buffer circles in any area of interest.</p>
+
+			</div>
+			<!-- End Post Content -->
+		</div>
+		<!-- End Post -->
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+<div class="hideshare"></div>
+<!-- Begin Related
+================================================== -->
+<div class="graybg">
+	<div class="container">
+		<div class="row listrecent listrelated">
+			<!-- begin post -->
+			<div class="col-md-4">
+				<div class="card">
+					<a href="tables_tableau.html">
+					<img class="img-fluid img-thumb" src="images/table.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="tables_tableau.html">Tables in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="tables_tableau.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+			<!-- begin post -->
+			<div class="col-md-4">
+				<div class="card">
+					<a href="maps_tableau.html">
+					<img class="img-fluid img-thumb" src="images/map.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="maps_tableau.html">Maps in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="maps_tableau.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+
+			<!-- begin post -->
+			<!-- 
+			<div class="col-md-4">
+				<div class="card">
+					<a href="tableau_project_2.html">
+					<img class="img-fluid img-thumb" src="images/table.PNG" alt="">
+					</a>
+					<div class="card-block">
+						<h2 class="card-title"><a href="tableau_project_2.html">Tables in Tableau</a></h2>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="aboutme.html"><img class="author-thumb" src="images/profile_pic.jpeg" alt="Blake"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
+								</span>
+								<span class="post-read-more"><a href="tableau_project_2.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+			<!-- end post -->
+
+		</div>
+	</div>
+</div>
+<!-- End Related Posts
+================================================== -->
+
+<!-- Footer -->
+<footer id="footer">
+	<section class="split contact">
+		<section>
+			<h3>Email</h3>
+			<p><a href="mailto:ublake7@gmail.com">ublake7@gmail.com</a></p>
+		</section>
+		<section> 
+			<h3 class="accounts-heading">Accounts</h3> <!-- Add a class to the h3 element -->
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/blake-underwood-b1867a252/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+				<li><a href="https://github.com/blakeunderwood" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</section>
+	</section>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- JavaScript files -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/mediumish.js"></script>
+</body>
+</html>
