@@ -116,34 +116,73 @@
 									<a href="https://www.linkedin.com/in/blake-underwood-b1867a252/" class="btn follow">connect</a>
 									<br>
 									<span class="post-date">26 July 2023</span>
-									<span class="dot"></span><span class="post-read">3 min read</span>
+									<span class="dot"></span><span class="post-read">6 min read</span>
 								</div>
 							</div>
 						</div>
 				<!-- End Top Meta -->
-				<h1 class="posttitle">Selecting first logins</h1>
+				<h1 class="posttitle">Using Inner Joins</h1>
 				<h6>(with MySQl)</h6>
 			</div>
 		</div>		
 			<!-- Begin Featured Image -->
-			<img class="featured-image img-fluid" src="images/first_login.PNG" alt="">
+			<img class="featured-image img-fluid" src="images/inner_joins_cover.PNG" alt="">
 			<!-- End Featured Image -->
 
 			<!-- Begin Post Content -->
 			<div class="article-post">
-				
-                <P>The objective of this project is to analyze the player activity data and identify the earliest login date for each individual player.</P>
 
-                <P>In the first step, I designed a new table. The table was created to contain specific fields, such as player_id and first_login.</P>
-                    
-                <p>Next, I utilized the GROUP BY clause in my SQL query to group the player activity data based on the unique player_id values. This grouping enabled me to isolate all the login records associated with each individual player.</p>
-                    
-                <p>To identify the earliest login date for each player, I utilized the MIN function. By applying this function within the SELECT statement, I could calculate the minimum (earliest) login date for each group of rows with the same player_id. As a result, I obtained the desired outcome: the first login date for each unique player.</p>
-                    
-                <p>Once the MYSQL query was executed successfully, I populated the new table with the player data ordered by their respective first-time login dates. This organized table provided a clear and concise overview of each player's initial interaction with the system.</P>
+                <p style="text-align: center;"><strong>Research question</strong></p>
 
-                <P> below is an example of the code I used to solve this problem.</P>
-                <img src="images/first_login_code.PNG" alt="" width="600">
+				<blockquote><p><em>Using the given datasets find the names and snums of the graduate students enrolled in course "database", ordered by snums.</em></p></blockquote>
+				<br>
+
+                <P> What our student data looks like.</P>
+                <img src="images/students_data.jpg" alt="" width="600">
+
+                <br><br>
+
+                <p> To load this data into our MySql databse we first create a table, we will call it students, and we will insert all the field names and their data types.</p>
+                <img src="images/create_table.jpg" alt="" width="600">
+
+                <br><br>
+
+                <p> Now that we have the create table we can use "INSERT INTO" to populate our table with all the data that we have.</p>
+                <img src="images/insert_into.jpg" alt="" width="600">
+
+                <br><br><br><br>
+                <p> To practice using the "INNER JOIN" function in sql and to answer our proposed question we will need to do the same thing we did above for every other given dataset, so to save time just assume the datasets below have all been added to our db.</p>
+                <img src="images/register_data.jpg" alt="" width="600">
+                <img src="images/courses_data.jpg" alt="" width="600">
+
+
+                <br><br><br><br>
+
+                <blockquote><p><em>"find the names and snums of the non-undergraduate students"</em></p></blockquote>
+				<br>
+                <p> First we can use the <strong>SELECT</strong> function to gather our name and snums and the <strong>FROM</strong> function to specify where name and snum is housed.</p>
+                <img src="images/start.PNG" alt="" width="600">
+
+                <br><br><br><br>
+                <br>
+                <blockquote><p><em>"enrolled in course "database""</em></p></blockquote>
+                <p>Now this is where we will have to use our <strong>INNER JOIN</strong> functions to check which students names/snums are enrolled in the course "database". We can join the two tables students and courses because the courses has a key connection with register which has a key connection to students. </p>
+                <img src="images/first_inner.PNG" alt="" width="600">
+
+                <br><br><br><br>
+                <p> visually this is what we have just done with our tables.</p>
+
+                <img src="images/inner_joins_cover.PNG" alt="" width="600">
+
+
+                <br><br><br><br>
+                <blockquote><p><em>"ordered by snums."</em></p></blockquote>
+                <p> Now to finish extracting the correct records based off the specifications in the research question above we will need to use the <strong>WHERE</strong> function to only get the records where name is equal to 'database' and lastly we can use the <strong>ORDER BY</strong> function to order our records by snum.</p>
+                <img src="images/end.PNG" alt="" width="600">
+
+                <br><br><br><br>
+                <p> finally we should have a table of graduate students names/snums ordered by snums.</p>
+
 
                 <br><br><br><br>
 				<div class="thin-line"></div>
@@ -192,11 +231,11 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="inner_join_sql.html">
-					<img class="img-fluid img-thumb" src="images/inner_joins_cover.PNG" alt="">
+					<a href="first_login_sql.html">
+					<img class="img-fluid img-thumb" src="images/first_login.PNG" alt="">
 					</a>
 					<div class="card-block">
-						<h2 class="card-title"><a href="inner_join_sql.html">Inner joins in SQL</a></h2>
+						<h2 class="card-title"><a href="first_login_sql.html">using id's in sql</a></h2>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
@@ -204,9 +243,9 @@
 								</span>
 								<span class="author-meta">
 								<span class="post-name"><a href="aboutme.html">Blake</a></span><br/>
-								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">6 min read</span>
+								<span class="post-date">31 July 2023</span><span class="dot"></span><span class="post-read">4 min read</span>
 								</span>
-								<span class="post-read-more"><a href="inner_join_sql.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+								<span class="post-read-more"><a href="first_login_sql.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
 							</div>
 						</div>
 					</div>
